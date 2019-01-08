@@ -17,14 +17,17 @@
 #include <vector>
 #include "futurerestore.hpp"
 #include "tsschecker.h"
+
 #ifdef HAVE_LIBIPATCHER
 #include <libipatcher/libipatcher.hpp>
 #endif
+
 #ifdef WIN32
 #include <windows.h>
 #ifndef ENABLE_VIRTUAL_TERMINAL_PROCESSING
 #define ENABLE_VIRTUAL_TERMINAL_PROCESSING 0x0004
 #endif
+
 #endif
 
 #define safeFree(buf) if (buf) free(buf), buf = NULL
@@ -82,8 +85,7 @@ void cmd_help(){
     printf("  -b, --baseband PATH\t\tBaseband to be flashed\n");
     printf("  -p, --baseband-manifest PATH\tBuildManifest for requesting baseband ticket\n");
     printf("  -s, --sep PATH\t\tSEP to be flashed\n");
-    printf("  -m, --sep-manifest PATH\tBuildManifest for requesting sep ticket\n");
-    printf("\n");
+    printf("  -m, --sep-manifest PATH\tBuildManifest for requesting sep ticket\n\n");
     printf("Homepage: https://github.com/s0uthwest/futurerestore\n");
     printf("Original project: https://github.com/tihmstar/futurerestore\n");
 }
